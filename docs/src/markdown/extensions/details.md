@@ -68,7 +68,7 @@ This extension's goal is not to provide you with the perfect polyfill, but this 
     Here is the basic CSS that that can be used.  It is meant to provide a consistent CSS in both browsers that support `#!html <details><summary>` tags and those that do not.
 
     ```css
-    details{display:block}details[open]>summary::before{content:"\25BC"}details summary{display:block;cursor:pointer}details     summary:focus{outline:0}details summary::before{content:"\25B6";padding-right:.5em}details summary::-webkit-details-marker{display:none}details.no-details:not([open])>*{display:none}details.no-details:not([open]) summary{display:block}
+    details{display:block}details[open]>summary::before{content:"\25BC"}details summary{display:block;cursor:pointer}details summary:focus{outline:0}details summary::before{content:"\25B6";padding-right:.5em}details summary::-webkit-details-marker{display:none}details.no-details:not([open])>*{display:none}details.no-details:not([open]) summary{display:block}
     ```
 
     And below is the JavaScript that will detect browsers that do not support `#!html <details><summary>` tags and apply a `no-details` class to all details in those browsers. It will also attach a click event that will toggle the open state. The CSS above will target the `no-details` class and the `open` attribute to hide/show the content of your `#!html <details>` tag. Just run the code after the HTML content is loaded.
